@@ -5,5 +5,5 @@ account: aqlife
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 9166962
-bundleId: 8014086
+bundleId: 8014142
 url: https://aqlife.shinyapps.io/aq_tfls_generation/

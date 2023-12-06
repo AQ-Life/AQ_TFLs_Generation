@@ -77,7 +77,7 @@ teae_pt1 <- left_join(teae_pt,
   arrange(ord_soc, ord_pt)
 
 #combine SOC and PT
-final <- rbindf(teae_any, teae_soc1, teae_pt1) %>%
+final <- rbind.fill(teae_any, teae_soc1, teae_pt1) %>%
   left_join(bign,
             by = c("TRTAN")) %>%
   mutate(percent = round(100*n/bign, 1),

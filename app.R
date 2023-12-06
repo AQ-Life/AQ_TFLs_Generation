@@ -11,6 +11,7 @@ library(table1)
 
 # Function
 source("socpt.R")
+source("rbindf.R")
 
 # Module
 source("mod_adam_data.R")
