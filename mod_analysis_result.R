@@ -1,5 +1,5 @@
 
-analysis_result_UI <- function(id) {
+mod_analysis_result_UI <- function(id) {
   ns <- NS(id)
   
   fluidRow(
@@ -10,14 +10,19 @@ analysis_result_UI <- function(id) {
   )
 }
 
-analysis_result_server <- function(input, output, session, 
-                             data = NULL, data_name = NULL, GroupID = NULL, GroupID_name = NULL, 
-                             adam_var = NULL, adam_var_name = NULL, TGrequest = NULL) {
+mod_analysis_result_server <- function(input, output, session, 
+                                   data = NULL, data_name = NULL, 
+                                   popdata = NULL, popdata_name = NULL, 
+                                   GroupID = NULL, GroupID_name = NULL, 
+                                   adam_var = NULL, adam_var_name = NULL,
+                                   level1_var = NULL, level2_var = NULL,
+                                   TGrequest = NULL) {
   ns <- session$ns
-
+  
   # TGtable
   output$TGtable <- renderTable({
     req(data())
+    req(popdata())
     req(GroupID())
     req(GroupID_name())
     req(TGrequest())
@@ -30,7 +35,9 @@ analysis_result_server <- function(input, output, session,
              topclass="Rtable1-grid Rtable1-shade Rtable1-times",
              data=data(), overall = "Total")
     } else if (TGrequest() == "Summary by SOC and PT"){
-      SOCPTTable(data())
+      req(level1_var)
+      req(level2_var)
+      SOCPTTable(popdata(), data(), level1_var(), level2_var())
     }
   })
   

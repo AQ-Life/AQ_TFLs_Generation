@@ -12,7 +12,7 @@ analysis_data_UI <- function(id) {
                        choices = c("Baseline Characterics",
                                    "Summary by SOC and PT"
                        )),
-           selectInput(ns("GroupID"), label = "Group variable", choices = NULL),
+           selectInput(ns("GroupID"), label = "Group variable", choices = "TRTAN"),
            conditionalPanel(condition = "input.TGrequest == 'Baseline Characterics'", ns = ns,
                             pickerInput(ns("adam_var"), label = "Columns to analysis:", choices = NULL, options = list('actions-box' = TRUE), multiple = TRUE)),
            shinyjs::disabled(actionButton(ns("AB_load"), label = "Load !"))
