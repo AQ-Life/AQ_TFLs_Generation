@@ -1,5 +1,6 @@
 rm(list = ls())
 
+
 options(encoding = "UTF-8")
 library(shiny)
 library(shinyWidgets)
