@@ -8,4 +8,3 @@ rsconnect::setAccountInfo(name='aqlife',
 
 options(encoding = "UTF-8")
 rsconnect::deployApp('D:/360Downloads/R/project/TFLs_Generation/AQ_TFLs_Generation')
-

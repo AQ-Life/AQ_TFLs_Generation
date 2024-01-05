@@ -1,5 +1,4 @@
 rm(list = ls())
-setwd(dir = "D:/360Downloads/R/project/TFLs_Generation/CSR_TFLs")
 
 options(encoding = "UTF-8")
 library(shiny)
